@@ -1,1 +1,105 @@
+:root {
+  --cor-fundo: #f4f6f8;
+  --cor-cartao: #ffffff;
+  --cor-primaria: #2f6fed;
+  --cor-primaria-escura: #234fb0;
+  --cor-texto: #1f2937;
+  --cor-texto-suave: #6b7280;
+  --cor-borda: #e5e7eb;
+  --cor-sucesso: #16a34a;
+  --cor-alerta: #d97706;
+  --cor-perigo: #dc2626;
+  --raio: 10px;
+  --sombra: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
 
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* ---------- Tela de login ---------- */
+
+.tela-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.cartao-login {
+  background: var(--cor-cartao);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 32px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.cartao-login h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.subtitulo {
+  margin: 0 0 24px;
+  color: var(--cor-texto-suave);
+  font-size: 14px;
+}
+
+.cartao-login label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: var(--cor-texto-suave);
+}
+
+.cartao-login input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.cartao-login button {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: var(--raio);
+  background: var(--cor-primaria);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cartao-login button:hover { background: var(--cor-primaria-escura); }
+.cartao-login button:disabled { opacity: 0.6; cursor: default; }
+
+.mensagem-erro {
+  color: var(--cor-perigo);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* ---------- Componentes reutilizáveis (dashboard, contas, etc.) ---------- */
+
+.cartao {
+  background: var(--cor-cartao);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 20px;
+}
+
+.status-pago { color: var(--cor-sucesso); font-weight: 600; }
+.status-pendente { color: var(--cor-alerta); font-weight: 600; }
+.status-vencido { color: var(--cor-perigo); font-weight: 600; }
