@@ -142,7 +142,6 @@ formNovaConta.addEventListener('submit', async (evento) => {
   botaoSalvar.textContent = 'Salvando...';
 
   const resposta = await Api.post('conta_criar', {
-    tipo: document.getElementById('campo-tipo').value,
     descricao: document.getElementById('campo-descricao').value,
     categoria_id: document.getElementById('campo-categoria').value,
     valor_previsto: document.getElementById('campo-valor').value,
