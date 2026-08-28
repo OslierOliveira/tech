@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinancasApp - Dashboard</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
+  <div class="container">
+
+    <header class="topo-pagina">
+      <h1>Resumo</h1>
+      <button id="btn-sair" class="botao-sair">Sair</button>
+    </header>
+
+    <div class="seletor-mes">
+      <button id="mes-anterior" aria-label="Mês anterior">‹</button>
+      <span id="mes-atual-label">-</span>
+      <button id="mes-proximo" aria-label="Próximo mês">›</button>
+    </div>
+
+    <div class="grade-resumo">
+      <div class="card-resumo">
+        <div class="rotulo">Total do mês</div>
+        <div class="valor" id="valor-total">R$ 0,00</div>
+      </div>
+      <div class="card-resumo pago">
+        <div class="rotulo">Pago</div>
+        <div class="valor" id="valor-pago">R$ 0,00</div>
+      </div>
+      <div class="card-resumo pendente">
+        <div class="rotulo">Pendente</div>
+        <div class="valor" id="valor-pendente">R$ 0,00</div>
+      </div>
+      <div class="card-resumo vencido">
+        <div class="rotulo">Vencido</div>
+        <div class="valor" id="valor-vencido">R$ 0,00</div>
+      </div>
+    </div>
+
+    <section class="cartao">
+      <h2>Orçamento comprometido</h2>
+      <div class="barra-progresso"><div id="barra-comprometido" style="width:0%"></div></div>
+      <p style="font-size:13px; color:var(--cor-texto-suave); margin:8px 0 0;">
+        <span id="texto-comprometido">0%</span> do mês já foi pago &middot;
+        <span id="texto-qtd-pendentes">0</span> contas pendentes
+      </p>
+    </section>
+
+    <section class="cartao">
+      <h2>Vencendo nos próximos 7 dias</h2>
+      <div id="lista-proximas"></div>
+    </section>
+
+    <section class="cartao">
+      <h2>Por categoria</h2>
+      <div id="lista-categorias"></div>
+    </section>
+
+    <section class="cartao">
+      <h2>Comparativo com o mês anterior</h2>
+      <div id="lista-comparativo"></div>
+    </section>
+
+  </div>
+
+  <nav id="nav-app"></nav>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/util.js"></script>
+  <script src="../js/dashboard.js"></script>
+
+</body>
+</html>
