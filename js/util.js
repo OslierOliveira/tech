@@ -1,6 +1,6 @@
 /* ========================================
    FinancasApp - Utilitários compartilhados
-======================================== */
+======================================== */ 
 
 const NOMES_MESES = [
   'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
