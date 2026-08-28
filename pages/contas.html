@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinancasApp - Contas</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
+  <div class="container">
+
+    <header class="topo-pagina">
+      <h1>Contas</h1>
+      <button id="btn-sair" class="botao-sair">Sair</button>
+    </header>
+
+    <div class="seletor-mes">
+      <button id="mes-anterior" aria-label="Mês anterior">‹</button>
+      <span id="mes-atual-label">-</span>
+      <button id="mes-proximo" aria-label="Próximo mês">›</button>
+    </div>
+
+    <div id="lista-contas" class="lista-contas"></div>
+
+  </div>
+
+  <button id="btn-nova-conta" class="botao-flutuante" aria-label="Nova conta avulsa">+</button>
+
+  <div id="fundo-modal" class="fundo-modal" hidden>
+    <div class="conteudo-modal">
+      <h2>Nova conta avulsa</h2>
+      <form id="form-nova-conta">
+
+        <div class="campo">
+          <label for="campo-tipo">Tipo</label>
+          <select id="campo-tipo" required>
+            <option value="parcela_unica">Parcela única</option>
+            <option value="esporadica">Esporádica</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="campo-descricao">Descrição</label>
+          <input type="text" id="campo-descricao" required>
+        </div>
+
+        <div class="campo">
+          <label for="campo-categoria">Categoria</label>
+          <select id="campo-categoria" required></select>
+        </div>
+
+        <div class="campo">
+          <label for="campo-valor">Valor previsto</label>
+          <input type="number" id="campo-valor" step="0.01" min="0.01" required>
+        </div>
+
+        <div class="campo">
+          <label for="campo-vencimento">Vencimento</label>
+          <input type="date" id="campo-vencimento" required>
+        </div>
+
+        <div class="campo">
+          <label for="campo-observacao">Observação (opcional)</label>
+          <textarea id="campo-observacao" rows="2"></textarea>
+        </div>
+
+        <div class="acoes-modal">
+          <button type="button" id="btn-cancelar-modal" class="botao botao-secundario">Cancelar</button>
+          <button type="submit" class="botao botao-primario">Salvar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <nav id="nav-app"></nav>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/util.js"></script>
+  <script src="../js/contas.js"></script>
+
+</body>
+</html>
