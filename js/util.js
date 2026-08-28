@@ -35,7 +35,7 @@ function renderizarNav(paginaAtiva) {
   const itens = [
     { id: 'dashboard', href: 'dashboard.html', icone: '📊', rotulo: 'Resumo' },
     { id: 'contas', href: 'contas.html', icone: '📋', rotulo: 'Contas' },
-    { id: 'modelos', href: 'modelos.html', icone: '🔁', rotulo: 'Fixas' },
+    { id: 'modelos', href: 'modelos.html', icone: '🔁', rotulo: 'Parceladas' },
     { id: 'categorias', href: 'categorias.html', icone: '🏷️', rotulo: 'Categorias' }
   ];
 
