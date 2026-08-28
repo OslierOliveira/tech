@@ -1,1 +1,60 @@
-testes
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinancasApp - Entrar</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tela-login">
+
+  <form id="form-login" class="cartao-login">
+    <h1>FinancasApp</h1>
+    <p class="subtitulo">Controle de contas a pagar</p>
+
+    <label for="senha">Senha de acesso</label>
+    <input type="password" id="senha" name="senha" autocomplete="current-password" required autofocus>
+
+    <button type="submit">Entrar</button>
+
+    <p id="mensagem-erro" class="mensagem-erro" hidden>Senha incorreta. Tente novamente.</p>
+  </form>
+
+  <script src="js/api.js"></script>
+  <script>
+    const form = document.getElementById('form-login');
+    const mensagemErro = document.getElementById('mensagem-erro');
+
+    // Se já tem uma senha guardada, tenta pular direto pro dashboard.
+    if (Api.getSenha()) {
+      window.location.href = 'pages/dashboard.html';
+    }
+
+    form.addEventListener('submit', async (evento) => {
+      evento.preventDefault();
+      mensagemErro.hidden = true;
+
+      const senha = document.getElementById('senha').value;
+      const botao = form.querySelector('button');
+      botao.disabled = true;
+      botao.textContent = 'Entrando...';
+
+      try {
+        const sucesso = await Api.login(senha);
+        if (sucesso) {
+          window.location.href = 'pages/dashboard.html';
+        } else {
+          mensagemErro.hidden = false;
+        }
+      } catch (erro) {
+        mensagemErro.textContent = 'Não foi possível conectar à API. Verifique a URL configurada em js/api.js.';
+        mensagemErro.hidden = false;
+      } finally {
+        botao.disabled = false;
+        botao.textContent = 'Entrar';
+      }
+    });
+  </script>
+
+</body>
+</html>
