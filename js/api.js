@@ -2,7 +2,7 @@
    FinancasApp - Cliente da API
    Centraliza todas as chamadas ao Apps
    Script e guarda a senha da sessão.
-======================================== */
+======================================== */ 
 
 const API_URL = 'https://script.google.com/macros/s/AKfycbxu2D4hKX_WompQTLtjzEkYVTBERjb6ggxZDArZxXzvUSOPihtB5e6NjjRUOjwaFMmI/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
 
