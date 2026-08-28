@@ -1,6 +1,6 @@
 /* ========================================
    FinancasApp - Utilitários compartilhados
-======================================== */ 
+======================================== */
 
 const NOMES_MESES = [
   'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
@@ -13,7 +13,9 @@ function formatarMoeda(valor) {
 
 function formatarDataBR(dataISO) {
   if (!dataISO) return '';
-  const [ano, mes, dia] = String(dataISO).split('-');
+  // Aceita tanto "2026-08-20" quanto "2026-08-20T03:00:00.000Z"
+  const dataSomente = String(dataISO).split('T')[0];
+  const [ano, mes, dia] = dataSomente.split('-');
   return `${dia}/${mes}/${ano}`;
 }
 
