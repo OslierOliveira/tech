@@ -4,7 +4,7 @@
    Script e guarda a senha da sessão.
 ======================================== */
 
-const API_URL = 'https://script.google.com/macros/s/AKfycbxoc9SWszhMMI78VVpaPzxs23cEImshL46ujdxfXG_zPhWbg05giruUPV4aMHQqhvCW/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
+const API_URL = 'https://script.google.com/macros/s/AKfycbxu2D4hKX_WompQTLtjzEkYVTBERjb6ggxZDArZxXzvUSOPihtB5e6NjjRUOjwaFMmI/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
 
 const Api = {
 
