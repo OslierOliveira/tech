@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinancasApp - Categorias</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
+  <div class="container">
+
+    <header class="topo-pagina">
+      <h1>Categorias</h1>
+      <button id="btn-sair" class="botao-sair">Sair</button>
+    </header>
+
+    <div id="lista-categorias" class="lista-contas"></div>
+
+  </div>
+
+  <button id="btn-nova-categoria" class="botao-flutuante" aria-label="Nova categoria">+</button>
+
+  <div id="fundo-modal" class="fundo-modal" hidden>
+    <div class="conteudo-modal">
+      <h2 id="titulo-modal">Nova categoria</h2>
+      <form id="form-categoria">
+
+        <input type="hidden" id="campo-id">
+
+        <div class="campo">
+          <label for="campo-nome">Nome</label>
+          <input type="text" id="campo-nome" required>
+        </div>
+
+        <div class="acoes-modal">
+          <button type="button" id="btn-cancelar-modal" class="botao botao-secundario">Cancelar</button>
+          <button type="submit" class="botao botao-primario">Salvar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <nav id="nav-app"></nav>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/util.js"></script>
+  <script src="../js/categorias.js"></script>
+
+</body>
+</html>
